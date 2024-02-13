@@ -6,7 +6,7 @@ import {
   FlatList,
   ActivityIndicator,
 } from "react-native";
-import DayListItem from "@components/core/DayListItem";
+import DayListItem from "../../src/components/core/DayListItem";
 // import { useFonts, Poppins_700Bold } from "@expo-google-fonts/poppins";
 import {
   AmaticSC_400Regular,

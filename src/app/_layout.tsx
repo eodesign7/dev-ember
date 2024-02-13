@@ -1,5 +1,6 @@
 import { Stack } from "expo-router";
 import React from "react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 // import * as SplashScreen from "expo-splash-screen";
 // import { useEffect } from "react";
 // import { useFonts, Poppins_700Bold } from "@expo-google-fonts/poppins";
@@ -13,7 +14,7 @@ import React from "react";
 export default function RootLayout() {
   // const [fontsLoaded, fontError] = useFonts({
   //   Poppins: Poppins_700Bold,
-  //   Amatic: AMaticSC_400Regular, 
+  //   Amatic: AMaticSC_400Regular,
   //   AmaticBold: AMaticSC_700Bold,
   // });
 
@@ -28,8 +29,10 @@ export default function RootLayout() {
   // }
 
   return (
-    <Stack screenOptions={{}}>
-      <Stack.Screen name="index" options={{ title: "Dev-ember" }} />
-    </Stack>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Stack screenOptions={{}}>
+        <Stack.Screen name="index" options={{ title: "Dev-ember" }} />
+      </Stack>
+    </GestureHandlerRootView>
   );
 }
