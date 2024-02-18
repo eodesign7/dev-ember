@@ -28,7 +28,8 @@
     },
     "plugins": ["expo-font", "expo-router"],
     "experiments": {
-      "tsconfigPaths": false
+      "typedRoutes": true,
+      "tsconfigPaths": true
     }
   }
 }
