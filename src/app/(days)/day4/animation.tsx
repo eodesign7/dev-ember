@@ -1,23 +1,28 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text, Button } from "react-native";
 import LottieView from "lottie-react-native";
-import Netflix from "@/assets/lottie/netflix.json";
+import { useRef } from "react";
 
-export default function AnimationScreen() {
+const AnimationScreen = () => {
+  const animation = useRef<LottieView>(null);
+
   return (
     <View>
       <LottieView
-        autoPlay
+        ref={animation}
         style={{
           width: 200,
           height: 200,
           backgroundColor: "#eee",
         }}
-        source={Netflix}
+        // Find more Lottie files at https://lottiefiles.com/featured
+        source={("@assets/lottie/loading.json")}
       />
+
+      <Button title="Play" onPress={() => animation.current?.play()} />
+      <Button title="Pause" onPress={() => animation.current?.pause()} />
+      <Button title="Reset" onPress={() => animation.current?.reset()} />
     </View>
   );
-}
+};
 
-
-// Day 4 Ended on 12:12 - 1:16:39
+export default AnimationScreen;

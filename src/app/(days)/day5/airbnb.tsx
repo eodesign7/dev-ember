@@ -17,8 +17,8 @@ export default function AirbnbScreen() {
   const [mapRegion, setMapRegion] = useState({
     latitude: 47.957016,
     longitude: 18.404041,
-    latitudeDelta: 0.0922,
-    longitudeDelta: 0.0421,
+    latitudeDelta: 0.01,
+    longitudeDelta: 0.01,
   });
 
   // Bottom-sheet position variables...

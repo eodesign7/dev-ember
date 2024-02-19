@@ -1,48 +1,29 @@
-import { View, Text, Button, StyleSheet, Pressable } from "react-native";
+import { View, Text, Button } from "react-native";
 import React from "react";
-import { Stack, Link } from "expo-router";
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { Link, Stack } from "expo-router";
+import MarkDownDisplay from "@/src/components/day-3/MarkDownDisplay"; 
+import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function DayDetailScreen() {
+const description = `
+# Animated splash screen
+`;
+
+const DayDetailsScreen = () => {
   return (
-    <SafeAreaView style={styles.page}>
-      <Stack.Screen
-        options={{
-          title: "Day 4: Splash Screen",
-          headerBackTitleVisible: false,
-          headerTintColor: "white",
-          headerStyle: { backgroundColor: "#18181A" },
-        }}
-      />
-      <View style={styles.content}>
-        <Text style={{ color: "white", fontSize: 32, padding: 40 }}>
-          Heading
-        </Text>
-      </View>
+    <SafeAreaView edges={["bottom"]} style={{ flex: 1 }}>
+      <Stack.Screen options={{ title: "Day 4: Splashscreen" }} />
 
-      <Link href={"/day4/animation"} asChild>
-        <Pressable style={styles.button}>
-          <Text style={{ color: 'white', fontSize: 20 }}>Go to Animation</Text>
-        </Pressable>
+      <MarkDownDisplay>{description}</MarkDownDisplay>
+
+      <Link href="/day4/animation" asChild>
+        <Button title="Go to the animation" />
+      </Link>
+
+      <Link href="/day4/splash" asChild>
+        <Button title="Splash screen animation" />
       </Link>
     </SafeAreaView>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  page: {
-    flex: 1,
-    backgroundColor: "#18181A",
-    justifyContent: "flex-end",
-  },
-  content: {
-    flex: 1,
-  },
-  button: {
-    backgroundColor: "#27292b",
-    marginHorizontal: 20,
-    padding: 20,
-    alignItems: "center",
-    borderRadius: 12,
-  },
-});
+export default DayDetailsScreen;
